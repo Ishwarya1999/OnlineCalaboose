@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Case details</title>
+
+   <!--  Font Icon 
+    <link rel="stylesheet" href="static/public//fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    
+    <link rel="stylesheet" href="static/public/case/css/style.css"> -->
+</head>
+<style type="text/css">
+    .btn {
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  
+}
+
+.btn:hover {opacity: 0.6 ;color: white;}
+</style>
+<body style=" background: linear-gradient(to top right,rgba(28,112,205,1) 0%, rgba(233,9,187,1) 93%);">
+    
+    <h1 style="color: white; font-family: sans-serif; font-size: 45px;"><center>CASE DETAILS</center></h1>
+      <a style=" float: right; margin-right: 125px;font-size: 30px;color: black;" href="/public/login/police">Back</a>
+      {% if post.complainee_name %}
+        <h2><p style="color: white;">Complainee Name:</p> {{post.complainee_name}}</h2>
+      {% else %}
+        <h2><p style="color: white;">Complainee Name:</p> No name given</h2>
+      {% endif %}  
+
+      {% if post.complainee_addr %}
+          <h2><p style="color: white;">Complainee Address:</p> {{post.complainee_addr}}</h2>
+       {% else %}
+        <h2><p style="color: white;">Complainee Address:</p> No address given</h2>
+      {% endif %}
+      
+    <div class="text">
+        <h2 style="color: red;">{{post.category}} Case</h2>
+
+        <h2><p style="color: white;">Body of the Complaint</p></h2>
+        <h3>{{post.body}}</h3>
+
+        <h2><p style="color: white;">Status</p></h2>
+        <h3>{{post.status}}</h3>
+          
+    </div>
+    <div>
+        <h2 style="color: white;"> Status Updation </h2>
+        <form method="post">
+            {% csrf_token %}
+         <textarea class = "textbox" name="status" cols=100 rows=10 placeholder="Enter the new status"></textarea>
+         <br>
+         <button class = "btn" type="submit">Submit</button>
+        </form>
+    </div>   
+     <div>
+        <h2 style="color: white;">Delete Compliant</h2>
+        <!-- <h2>hello:{{post.id}}</h2> -->
+        <a href="delete/{{post.id}}/" class="btn">Delete</a>
+    </div>
+    <br>
+
+    <!--
+    <div>
+        <h2 style="color: white;">Request report</h2>
+        <h2>hello:{{post.id}}</h2> 
+        <a href="#" class="btn">Request</a>
+    </div> 
+    <br>
+    <br>
+-->
+
+
+   <!--  <div class="main">
+
+        <div class="container">
+            <form method="POST" class="appointment-form" id="appointment-form">
+                <h2>education appointment form</h2>
+                <div class="form-group-1">
+                    <input type="text" name="title" id="title" placeholder="Title" required />
+                    <input type="text" name="name" id="name" placeholder="Your Name" required />
+                    <input type="email" name="email" id="email" placeholder="Email" required />
+                    <input type="number" name="phone_number" id="phone_number" placeholder="Phone number" required />
+                    <div class="select-list">
+                        <select name="course_type" id="course_type">
+                            <option slected value="">Course Type</option>
+                            <option value="society">Society</option>
+                            <option value="language">Language</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-2">
+                    <h3>How would you like to bo located ?</h3>
+                    <div class="select-list">
+                        <select name="confirm_type" id="confirm_type">
+                            <option seleected value="">By phone</option>
+                            <option value="by_email">By email</option>
+                        </select>
+                    </div>
+                    <div class="select-list">
+                        <select name="hour_appointment" id="hour_appointment">
+                            <option seleected value="">Hours : 8am 10pm</option>
+                            <option value="9h-11h">Hours : 9am 11pm</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" name="submit" id="submit" class="submit" value="Request an appointment" />
+                </div> 
+            </form>
+        </div>
+
+    </div>-->
+
+    <!-- JS -->
+   <!--  <script src="static/public/case/vendor/jquery/jquery.min.js"></script>
+    <script src="static/public/case/js/main.js"></script> -->
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

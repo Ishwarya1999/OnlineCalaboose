@@ -1,0 +1,263 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Signup As Public</title>
+	{% load crispy_forms_tags %}
+
+	<title>Public Signup</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>-->
+	<!-- 
+	  <form method="post">
+	    {% csrf_token %}
+	    <table>{{ form.as_table }}</table>
+	    <button type="submit">Sign in</button>
+	  </form>
+	 -->
+<!--	<h1 style="margin:20px; text-align: center; font-family: montserrat;">SIGNUP</h1>
+	
+				
+	{% block content %}
+	<form method="post" enctype="multipart/form-data">
+		{%csrf_token%}
+
+		<div class="form-row" style="margin-right:20px; margin-left: 20px;">
+			<div class="form-group col-md-6 mb-0">
+		        {{ form.email|as_crispy_field }}
+		    </div>
+		    <div class="form-group col-md-6 mb-0">
+		        {{ form.username|as_crispy_field }}
+		    </div>
+		</div>
+
+
+		<div class="form-row" style="margin-right:20px; margin-left: 20px;">
+			<div class="form-group col-md-6 mb-0">
+		        {{ form.first_name|as_crispy_field }}
+		    </div>
+		    <div class="form-group col-md-6 mb-0">
+		        {{ form.last_name|as_crispy_field }}
+		    </div>
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.flat_no|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px; width: 60%;">
+			{{form.st_name|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.city|as_crispy_field}}
+		</div>
+
+		<div class="form-row" style="margin-right:20px; margin-left: 20px;">
+			<div class="form-group col-md-6 mb-0">
+		        {{ form.password1|as_crispy_field }}
+		    </div>
+		    <div class="form-group col-md-6 mb-0">
+		        {{ form.password2|as_crispy_field }}
+		    </div>
+		</div>
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.area|as_crispy_field}}
+		</div>
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.state|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;">
+
+			{{form.pincode|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;">
+
+			{{form.phno|as_crispy_field}}
+		</div>
+
+		
+
+
+
+
+
+		<button type="submit" style="border:1px; margin: 20px; width: 140px; height: 40px;">SIGN UP</button>
+			
+
+	</form>
+
+			
+
+	{% endblock %}
+
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+		{% load crispy_forms_tags %}
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>SIGN UP</title>
+
+    <!-- Icons font CSS-->
+   <!--  <link href="/static/public/signup/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/static/public/signup/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all"> -->
+    <!-- Font special for pages-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
+
+    <!-- Vendor CSS-->
+   <!--  <link href="/static/public/signup/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/static/public/signup/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+ -->
+    <!-- Main CSS-->
+   <!--   <link href="/static/public/signup/css/main.css" rel="stylesheet" media="all"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+
+</head>
+<style type="text/css">
+	.btn {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.btn:hover {opacity: 0.6 ;color: white;}
+</style>
+
+<body >
+    
+        <div >
+            <div class="card card-4" style=" background: linear-gradient(to top right,rgba(28,112,205,1) 0%, rgba(233,9,187,1) 93%);">
+            	 <h2 class="title" style="align-self: center;margin-top: 40px;color: white;font-family:fantasy;">Registration Form</h2>
+            	 <br>
+                <div class="w3-panel w3-card" style="width:50%;align-self:center;height: 100%; background-color: white;">
+                   
+               <!--     <form method="post">
+	    {% csrf_token %}
+	    <table>{{ form.as_table }}</table>
+	    <button type="submit">Sign in</button>
+	  </form> -->
+
+	
+				
+	
+	<form method="post" enctype="multipart/form-data">
+		{%csrf_token%}
+		<br>
+		<div class="" style="margin-right:20px; margin-left: 20px;">
+			<div class="">
+		        {{ form.email|as_crispy_field }}
+		    </div>
+		    <div class="">
+		        {{ form.username|as_crispy_field }}
+		    </div>
+		</div>
+
+
+		<div class="" style="margin-right:20px; margin-left: 20px; border-color: black;">
+			<div >
+		        {{ form.first_name|as_crispy_field }}
+		    </div>
+		    <div >
+		        {{ form.last_name|as_crispy_field }}
+		    </div>
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.flat_no|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px; width: 60%;">
+			{{form.st_name|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.city|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;">
+			<div >
+		        {{ form.password1|as_crispy_field }}
+		    </div>
+		    <div >
+		        {{ form.password2|as_crispy_field }}
+		    </div>
+		</div>
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.area|as_crispy_field}}
+		</div>
+		<div style="margin-right:20px; margin-left: 20px;width: 60%;">
+			{{form.state|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;">
+
+			{{form.pincode|as_crispy_field}}
+		</div>
+
+		<div style="margin-right:20px; margin-left: 20px;">
+
+			{{form.phno|as_crispy_field}}
+		</div>
+		<br>
+                        <div class="">
+                            <button class="btn" style="border-radius: 10px;margin-right:20px; margin-left: 20px;" type="submit">Submit</button>
+                        </div>
+                      
+                    </form>
+
+                </div>
+            
+            </div>
+        </div>
+    
+
+    <!-- Jquery JS-->
+    <script src="/static/public/signup/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/static/public/signup/vendor/select2/select2.min.js"></script>
+    <script src="/static/public/signup/vendor/datepicker/moment.min.js"></script>
+    <script src="/static/public/signup/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/static/public/signup/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
+
+
+

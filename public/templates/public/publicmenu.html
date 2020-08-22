@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WELCOME</title>
+</head>
+<style>
+	.button {
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: #f4511e;
+	  border: none;
+	  color: #FFFFFF;
+	  text-align: center;
+	  font-size: 28px;
+	  padding: 20px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 5px;
+	}
+
+	.button span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+
+	.button span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+
+	.button:hover span {
+	  padding-right: 25px;
+	}
+
+	.button:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+	#grad1 {
+  		height: 900px;
+  		background-color: red; /* For browsers that do not support gradients */
+  		background-image: linear-gradient(black, white); /* Standard syntax (must be last) */
+	}
+</style>
+<body >
+	<center>
+	<h1 style="color: black;font-family: sans-serif;">SUCCESSFULLY LOGGED IN</h1>
+	<h2 style="font-family: fantasy;color: black">HELLO, {{ firstname }} {{lastname}}</h2>
+	
+	  <ul  >
+          {% if user.is_authenticated %}
+          
+          <li style="display: block;float: right; margin-left: 10px;">
+              <a href="/" style="margin-right: 125px;color: black;font-family: montserrat;
+                  font-size: 25px;">Logout<i style="margin-left:10px;"></i></a></li>
+           {% endif %}
+      </ul>
+      <br>
+      <br>
+      <form action="regComp" method="GET">
+      	{% csrf_token %}
+       <a href="/public/login/newComp/" class="button" style="vertical-align:middle;width: 400px;" role="button"><span>Register a Compliant</span></a>
+       <br>
+      <a href="/public/login/viewComp/" class="button" style="vertical-align:middle;width: 400px;" role="button"><span>View Your Compliants</span></a>
+   	   <br>
+   	   <a href="/public/login/viewcriminal/" class="button" style="vertical-align:middle;width: 400px;"><span>View Most Wanted Criminals</span></a>
+   	   <br>
+       <a href="/public/login/viewunidentifiedbodies/" class="button" style="vertical-align:middle;width: 400px;"><span>View Unidentified Bodies</span></a>
+   	   <br>
+   	    <a href="/public/login/newMissingperson/" class="button" style="vertical-align:middle;width: 400px;"><span>Register for a Missing Person</span></a>
+   	   <br>
+      </form>
+      
+    </center>
+</body>
+</html>

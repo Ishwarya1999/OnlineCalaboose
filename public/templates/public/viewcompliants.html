@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+    <head>
+    <title>
+        CASES
+    </title>
+    
+   
+           
+<style>
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+  }
+.grid > article {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+.grid > article img {
+  max-width: 100%;
+}
+.text {
+  padding: 0 20px 20px;
+}
+.text > button {
+  background: gray;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  }
+</style>
+ </head>
+ <body>
+    <h1>HELLO, {{username}} </h1>    
+    <br> 
+    <br>
+<br>
+<a style=" float: right; margin-right: 125px;font-size: 30px;color: black;" href="/public/login/publicmenu">Back</a>
+<!-- <input type=button value="Previous Page" onClick="javascript:history.go(-1);"> 
+<a href="{{request.META.HTTP_REFERER}}">Go back</a> -->
+<br>
+<br>
+<br>
+    
+<main class="grid">
+        {% for post in posts %}
+  <article>
+   <!--<img src="static/case/images/handcuff.jpg" alt="Sample photo">-->
+    <div class="text">
+    
+      <h3>{{post.body}}</h3>
+      <p>{{post.category}}</p>
+       <button style="background-color: black;"><a style="color: white;" href="case/{{post.id}}/" >Look at the complaint</a></button>
+    </div>
+  </article>
+  {% endfor %}
+</main>
+    </body>
+</html>

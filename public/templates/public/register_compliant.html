@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register a Compliant</title>
+	{% load crispy_forms_tags %}
+
+	<title>Register Compliant</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+</head>
+<style type="text/css">
+	.btn {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  
+}
+
+.btn:hover {opacity: 0.6 ;color: white;}
+</style>
+<body>
+	
+	 <div>
+            <div class="card card-4" style=" background: linear-gradient(to top right,rgba(28,112,205,1) 0%, rgba(233,9,187,1) 93%);">
+            	 <h2 class="title" style="align-self: center;margin-top: 40px;color: white;font-family:fantasy;">Registration Form</h2>
+            	 <br>
+     
+<br>
+<a style="text-align: right;float:right;margin-right: 125px; font-size: 30px;color: white;" href="/public/login/publicmenu">Back</a>
+<!-- <input type=button value="Previous Page" onClick="javascript:history.go(-1);"> 
+<a href="{{request.META.HTTP_REFERER}}">Go back</a> -->
+<br>
+
+                <div class="w3-panel w3-card" style="width:30%;align-self:center;height: 100%; background-color: white;">
+	
+				
+	{% block content %}
+	<form method="post" enctype="multipart/form-data">
+		{%csrf_token%}
+		<br>
+		<div class="" style="margin-right:20px; margin-left: 20px;">
+			 <h4 class="title" style="align-self: center;margin-top: 40px;color: black;font-family:fantasy;">Fill in the below fields to register the compliant</h2>
+			<br>
+			{{ form.errors }}
+			{{ form.non_field_errors }}
+			<div class="form-group col-md-6 mb-0" style="width: 100%;">
+		        Name of the Complainee
+		        <input type="text" name="c_name" placeholder="Enter the name"> 
+		    </div>
+		    <br>
+			<div class="form-group col-md-6 mb-0" style="width: 100%;">
+		        Address of the Complainee
+		        <textarea class = "textbox" name="c_addr" cols=30 rows=4 placeholder="Enter the address"></textarea>
+		    </div>
+
+			<br>
+			
+			 <div class="form-group col-md-6 mb-0" style="width: 100%;">
+		        {{ form.category|as_crispy_field }}
+		    </div>
+		    <br>
+			<div class="form-group col-md-6 mb-0" style="width: 50px;">
+		         {{ form.body |as_crispy_field }}
+		    </div>
+		    
+		</div>
+		<div>
+			<br>
+		<button class = "btn" type="submit" style="margin-right:30px; margin-left: 30px;">Submit</button>
+		</div>	
+		<br>
+		
+
+	</form>
+
+
+
+	{% endblock %}
+</div>
+</div>
+</div>
+	
+</body>
+</html>
+
+
+
+
